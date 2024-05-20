@@ -283,6 +283,7 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/google/interfaces \
     hardware/google/pixel \
     hardware/hisi \
+    hardware/huawei \
     hardware/hisi/power-libperfmgr
 
 # Touch
