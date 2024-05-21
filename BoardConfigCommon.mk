@@ -59,7 +59,7 @@ BOARD_MKBOOTIMG_ARGS += --tags_offset $(BOARD_KERNEL_TAGS_OFFSET)
 BOARD_MKBOOTIMG_ARGS += --second_offset $(BOARD_SECOND_OFFSET)
 
 BOARD_CUSTOM_BOOTIMG := true
-BOARD_CUSTOM_BOOTIMG_MK := hardware/hisi/mkbootimg.mk
+BOARD_CUSTOM_BOOTIMG_MK := hardware/huawei/mkbootimg.mk
 
 TARGET_KERNEL_SOURCE := kernel/huawei/hi6250-8
 TARGET_KERNEL_CONFIG := merge_hi6250_defconfig
