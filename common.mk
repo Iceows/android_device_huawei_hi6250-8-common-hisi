@@ -103,17 +103,16 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl
 
 PRODUCT_PACKAGES += \
+    vendor.huawei.hardware.camera.cfgsvr@1.1.vendor \
+    vendor.huawei.hardware.hwfactoryinterface@1.1.vendor
+
+PRODUCT_PACKAGES += \
     libgui_vendor \
     libstdc++.vendor
 
 # Connectivity
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/connectivity/init.connectivity.hi1102.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/connectivity/init.connectivity.hi1102.rc
-
-# Charger
-PRODUCT_PACKAGES += \
-    chargeled \
-    chargeled.recovery
 
 # Display
 PRODUCT_PACKAGES += \
@@ -145,9 +144,7 @@ PRODUCT_PACKAGES += \
     fstab.modem
 
 # DRM
-PRODUCT_PACKAGES += \
-    android.hardware.drm@1.0-impl \
-    android.hardware.drm@1.0-service
+
 
 # fastbootd
 PRODUCT_PACKAGES += \
@@ -173,9 +170,13 @@ PRODUCT_PACKAGES += \
 
 # Hisi
 PRODUCT_PACKAGES += \
-    hisi_init \
+    hisi_init
+
+# Huawei (stubs)
+PRODUCT_PACKAGES += \
     libchrlog \
     libhwlog \
+    libimonitor \
     libxcollie
 
 # HIDL
@@ -205,11 +206,11 @@ PRODUCT_PACKAGES += \
 
 # Lights
 PRODUCT_PACKAGES += \
-    android.hardware.light-service.hisi
+    android.hardware.light-service.huawei
 
-# LiveDisplay
+# Livedisplay
 PRODUCT_PACKAGES += \
-    vendor.lineage.livedisplay@2.1-service-hisi
+    vendor.lineage.livedisplay@2.1-service.hisi
 
 # Media
 PRODUCT_COPY_FILES += \
@@ -240,7 +241,10 @@ PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power-service.hisi-libperfmgr
+    android.hardware.power-service.huawei-libperfmgr
+    
+PRODUCT_PACKAGES += \
+    libiawareperf_client
 
 PRODUCT_COPY_FILES += \
     system/core/libprocessgroup/profiles/cgroups_28.json:$(TARGET_COPY_OUT_VENDOR)/etc/cgroups.json \
