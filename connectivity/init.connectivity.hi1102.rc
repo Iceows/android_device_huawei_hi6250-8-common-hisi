@@ -23,8 +23,10 @@ on early-init
 #gnss
     setprop is_hisi_connectivity_chip 1
 #ir
-	setprop ro.hardware.consumerir "hisi.hi6250"
-
+    setprop ro.hardware.consumerir "hisi.hi6250"
+# A-GPS (SUPL20 apk)
+    setprop is_hisi_connectivity_chip 1
+    
 # optimize selinux strategy for OTA
 on post-fs-data
     chmod 660 /dev/ttyAMA3

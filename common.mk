@@ -331,6 +331,14 @@ PRODUCT_COPY_FILES += \
 # IME Input
 PRODUCT_PACKAGES += \
     libjni_latinimegoogle
+    
+# AGPS Supl20
+PRODUCT_PACKAGES += \
+    gnss_supl20service_hisi
+
+PRODUCT_COPY_FILES += \
+     $(LOCAL_PATH)/system/etc/gnss/config/gnss_suplconfig_hisi.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/gnss/config/gnss_suplconfig_hisi.xml \
+     $(LOCAL_PATH)/system/etc/permissions/privapp-permissions-supl.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-supl.xml
 
 # Call the proprietary setup
 $(call inherit-product, vendor/huawei/hi6250-8-common/hi6250-8-common-vendor.mk)
