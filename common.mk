@@ -328,5 +328,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf \
     $(LOCAL_PATH)/wifi/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf
 
+# IME Input
+PRODUCT_PACKAGES += \
+    libjni_latinimegoogle
+
 # Call the proprietary setup
 $(call inherit-product, vendor/huawei/hi6250-8-common/hi6250-8-common-vendor.mk)
