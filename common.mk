@@ -103,12 +103,18 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl
 
 PRODUCT_PACKAGES += \
-    vendor.huawei.hardware.camera.cfgsvr@1.1.vendor \
-    vendor.huawei.hardware.hwfactoryinterface@1.1.vendor
+    vendor.huawei.hardware.biometrics.hwfacerecognize@1.1.vendor \
+    vendor.huawei.hardware.hwfactoryinterface@1.0.vendor \
+    vendor.huawei.hardware.hwfactoryinterface@1.1.vendor \
+    vendor.huawei.hardware.sensors@1.0.vendor
 
 PRODUCT_PACKAGES += \
-    libgui_vendor \
-    libstdc++.vendor
+    libstdc++.vendor \
+    libui_shim.vendor
+
+# Charger
+PRODUCT_PACKAGES += \
+    charger_res_images_vendor
 
 # Connectivity
 PRODUCT_COPY_FILES += \
@@ -144,7 +150,9 @@ PRODUCT_PACKAGES += \
     fstab.modem
 
 # DRM
-
+PRODUCT_PACKAGES += \
+    android.hardware.drm@1.2.vendor \
+    android.hardware.drm-service.clearkey
 
 # fastbootd
 PRODUCT_PACKAGES += \
@@ -236,9 +244,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/nfc/libnfc-nci.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nci.conf
 
-# Partitions
-PRODUCT_USE_DYNAMIC_PARTITIONS := true
-
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power-service.huawei-libperfmgr
@@ -267,15 +272,13 @@ PRODUCT_PACKAGES += \
 
 # Sensors
 PRODUCT_PACKAGES += \
-    android.hardware.sensors@1.0.vendor
-
-PRODUCT_PACKAGES += \
-    android.frameworks.sensorservice@1.0.vendor
+    android.frameworks.sensorservice@1.0.vendor \
+    android.hardware.sensors@1.0-impl \
+    android.hardware.sensors@1.0-service
 
 # Shims
 PRODUCT_PACKAGES += \
     libbase_shim \
-    libsensor_vendor \
     libshim_log \
     libui_shim.vendor \
     libtinyxml2_shim.vendor \
@@ -306,6 +309,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.vibrator@1.0-impl \
     android.hardware.vibrator@1.0-service
+
+PRODUCT_PACKAGES += \
+    vendor.huawei.hardware.hwvibrator@1.0.vendor
 
 # VNDK
 PRODUCT_PACKAGES += \
